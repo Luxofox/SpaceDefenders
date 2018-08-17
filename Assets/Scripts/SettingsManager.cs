@@ -8,7 +8,7 @@ public class SettingsManager : MonoBehaviour {
     public Toggle fullScreenToggle;
     public Dropdown resolutionDropdown;
     public Slider volumenSlider;
-    public GameSettings gameSettings;
+    private GameSettings gameSettings;
     public AudioSource musicSource;
     public Resolution[] resolutions;
 
@@ -21,6 +21,10 @@ public class SettingsManager : MonoBehaviour {
         volumenSlider.onValueChanged.AddListener(delegate { OnVolumenChange(); });
 
         resolutions = Screen.resolutions;
+        foreach(Resolution resolution in resolutions)
+            {
+                resolutionDropdown.options.Add(new Dropdown.OptionData(resolution.ToString()));
+            }
     }
 
     public void OnFullScreenToggle()
