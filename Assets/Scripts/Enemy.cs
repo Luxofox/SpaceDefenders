@@ -62,13 +62,15 @@ public class Enemy : MonoBehaviour {
 	void ReachedGoal() {
 		GameObject.FindObjectOfType<ScoreManager>().LoseLife();
 		Destroy(gameObject);
-	}
+        FindObjectOfType<AudioManager>().Play("LoosingALife");
+    }
 
 	public void TakeDamage(float damage) {
 		health -= damage;
 		if(health <= 0) {
 			Die();
-		}
+            FindObjectOfType<AudioManager>().Play("EnemyDie");
+        }
 	}
 
 	public void Die() {

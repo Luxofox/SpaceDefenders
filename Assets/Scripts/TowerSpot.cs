@@ -22,7 +22,8 @@ public class TowerSpot : MonoBehaviour {
 			// FIXME: estoy asumiendo que es un objeto perteneciente a un padre (es decir, es un hijo) por esto no se colocan bien
 			Instantiate(bm.selectedTower, transform.parent.position, transform.parent.rotation);
 			Destroy(transform.parent.gameObject);
-		}
+            FindObjectOfType<AudioManager>().Play("TurretCreate");
+        }
 	}
 
 }

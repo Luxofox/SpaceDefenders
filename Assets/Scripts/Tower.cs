@@ -64,5 +64,7 @@ public class Tower : MonoBehaviour {
 		b.target = e.transform;
 		b.damage = damage;
 		b.radius = radius;
+
+        FindObjectOfType<AudioManager>().Play("TurretShooting");
 	}
 }

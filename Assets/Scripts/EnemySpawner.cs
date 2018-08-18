@@ -5,8 +5,9 @@ public class EnemySpawner : MonoBehaviour {
 
 	float spawnCD = 0.25f;
 	float spawnCDremaining = 5;
+    int n = 1;
 
-	[System.Serializable]
+    [System.Serializable]
 	public class WaveComponent {
 		public GameObject enemyPrefab;
 		public int num;
@@ -35,11 +36,17 @@ public class EnemySpawner : MonoBehaviour {
 					Instantiate(wc.enemyPrefab, this.transform.position, this.transform.rotation);
 
 					didSpawn = true;
-					break;
+                    break;
 				}
-			}
-
-			if(didSpawn == false) {
+                if (n != 0)
+                {
+                    FindObjectOfType<AudioManager>().Play("EnemySpawn");
+                    n = 0;
+                }
+                
+            }
+            
+            if (didSpawn == false) {
 				// se tiene que completar la oleada
 				// TODO: crear mas oleadas de enemigos
 
@@ -54,6 +61,8 @@ public class EnemySpawner : MonoBehaviour {
 
                 Destroy(gameObject);
 			}
-		}
-	}
+            
+        }
+        
+    }
 }
