@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManagerScript : MonoBehaviour {
-    
-	void Start () {
+
+    public GameObject MenuPrincipalUI;
+
+    public GameObject optionsMenuUI;
+    void Start () {
 		
 	}
 	
@@ -22,6 +25,19 @@ public class LevelManagerScript : MonoBehaviour {
     public void CerrarJuego()
     {
         Application.Quit();
+    }
+
+    public void Options()
+    {
+        MenuPrincipalUI.SetActive(false);
+        optionsMenuUI.SetActive(true);
+
+    }
+
+    public void Back()
+    {
+        MenuPrincipalUI.SetActive(true);
+        optionsMenuUI.SetActive(false);
     }
 
 }

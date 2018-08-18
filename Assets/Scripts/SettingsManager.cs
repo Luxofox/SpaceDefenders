@@ -8,14 +8,12 @@ public class SettingsManager : MonoBehaviour {
     public Toggle fullScreenToggle;
     public Dropdown resolutionDropdown;
     public Slider volumenSlider;
-    private GameSettings gameSettings;
     public AudioSource musicSource;
     public Resolution[] resolutions;
 
     void OnEnable()
     {
-        gameSettings = new GameSettings();
-
+       
         fullScreenToggle.onValueChanged.AddListener(delegate { OnFullScreenToggle(); });
         resolutionDropdown.onValueChanged.AddListener(delegate { OnResolutionChange(); });
         volumenSlider.onValueChanged.AddListener(delegate { OnVolumenChange(); });
@@ -29,17 +27,17 @@ public class SettingsManager : MonoBehaviour {
 
     public void OnFullScreenToggle()
     {
-       gameSettings.fullscreen = Screen.fullScreen = fullScreenToggle.isOn;
+       Screen.fullScreen = fullScreenToggle.isOn;
     }
 
     public void OnResolutionChange()
     {
-        
+        Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height, Screen.fullScreen);
     }
 
     public void OnVolumenChange()
     {
-        musicSource.volume = gameSettings.musicVolumen = volumenSlider.value;
+        musicSource.volume = volumenSlider.value;
     }
 
     public void SaveSettings()
