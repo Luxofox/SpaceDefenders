@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManagerScript : MonoBehaviour {
 
     public GameObject MenuPrincipalUI;
-
+    public GameObject TutorialUI;
     public GameObject optionsMenuUI;
     void Start () {
 		
@@ -21,14 +21,14 @@ public class LevelManagerScript : MonoBehaviour {
         ScoreManager.Lives = 20;
         ScoreManager.money = 23;
         SceneManager.LoadScene(nombreNivel);
-        EnemySpawner.wavesRestantes = 3;
+        EnemySpawner.wavesRestantes = 5;
 
     }
     
     public void CerrarJuego()
     {
         Application.Quit();
-    }
+    } 
 
     public void Options()
     {
@@ -41,6 +41,18 @@ public class LevelManagerScript : MonoBehaviour {
     {
         MenuPrincipalUI.SetActive(true);
         optionsMenuUI.SetActive(false);
+    }
+
+    public void Tutorial()
+    {
+        MenuPrincipalUI.SetActive(false);
+        TutorialUI.SetActive(true);
+    }
+
+    public void BackTutorial()
+    {
+        MenuPrincipalUI.SetActive(true);
+        TutorialUI.SetActive(false);
     }
 
 }
