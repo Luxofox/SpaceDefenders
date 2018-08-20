@@ -1,0 +1,15 @@
+Tutorial de Space Defenders
+
+Primero que todo bienvenido al juego con mejores mecánicas, gráficas y demás.
+
+Space Defenders es un juego de estrategia donde tendrás que utilizar tus capacidades mentales para ganar. Tu objetivo es defender la base de los enemigos, tienes un un arsenal de torres para este propósito.
+
+¿Cómo jugar?
+
+1. Tienes cierta cantidad de vidas, si un enemigo llega al final pierdes una vida. Si pierdes todas las vidas pierdes el juego.
+2. Para defenderte cuentas con dos tipos de torres, estas las colocas en los asentamientos métalicos situados en el mapa. De ti dependerá que tipo de torres colocar y dónde.
+3. Tienes una cantidad de dinero inicial, el dinero sirve para colocar torres. No te preocupes porque cada enemigo eliminado se vuelve en dinero, es decir mientras mas elimines más torres puedes colocar.
+
+Simple, ¡¿no?!
+
+Pues a jugar!!!!!!!!
