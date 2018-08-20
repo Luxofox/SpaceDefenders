@@ -5,7 +5,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	float spawnCD = 0.25f;
 	float spawnCDremaining = 5;
-    public static int numberOfWaves = 3;
+    public int numberOfWaves = 3;
 
     [System.Serializable]
 	public class WaveComponent {
@@ -14,6 +14,8 @@ public class EnemySpawner : MonoBehaviour {
 		[System.NonSerialized]
 		public int spawned = 0;
 	}
+
+    public static int wavesRestantes = 3;
     
 
 	public WaveComponent[] waveComps;
@@ -37,12 +39,13 @@ public class EnemySpawner : MonoBehaviour {
 					wc.spawned++;
                     Enemy.numberOfEnemies++;
 					Instantiate(wc.enemyPrefab, this.transform.position, this.transform.rotation);
-
+                    
 					didSpawn = true;
                     break;
 				}
                 if (numberOfWaves != 0)
                 {
+                    wavesRestantes--;
                     FindObjectOfType<AudioManager>().Play("EnemySpawn");
                     numberOfWaves = 0;
                 }

@@ -21,7 +21,7 @@ public class LevelManagerScript : MonoBehaviour {
         ScoreManager.Lives = 20;
         ScoreManager.money = 20;
         SceneManager.LoadScene(nombreNivel);
-        EnemySpawner.numberOfWaves = 3;
+        EnemySpawner.wavesRestantes = 3;
 
     }
     

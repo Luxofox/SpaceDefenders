@@ -33,7 +33,8 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Enemy.numberOfEnemies);
+       // Debug.Log(Enemy.numberOfEnemies);
+        Debug.Log(EnemySpawner.wavesRestantes);
         moneyText.text = "Money: $" + money.ToString();
         livesText.text = "Lives: " + Lives.ToString();
     }

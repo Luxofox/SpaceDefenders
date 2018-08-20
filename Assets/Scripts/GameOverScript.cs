@@ -19,9 +19,10 @@ public class GameOverScript : MonoBehaviour {
             ShowGameOverUI();
 
         }
-        if (EnemySpawner.numberOfWaves == 0 && Enemy.numberOfEnemies <= 0)
+        if (EnemySpawner.wavesRestantes <= 0   && Enemy.numberOfEnemies <= 0)
         {
             gameWinUI.SetActive(true);
+            
 
         }
 
