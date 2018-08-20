@@ -4,7 +4,7 @@ using System.Collections;
 public class Enemy : MonoBehaviour {
 
 	GameObject pathGO;
-
+    public static int numberOfEnemies;
 	Transform targetPathNode;
 	int pathNodeIndex = 0;
 
@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour {
 		}
 		else {
 			targetPathNode = null;
-			ReachedGoal();
+			
 		}
 	}
 	
@@ -74,8 +74,9 @@ public class Enemy : MonoBehaviour {
 	}
 
 	public void Die() {
-		// TODO: encontrar un modo de hacer esto mas seguro?
-		GameObject.FindObjectOfType<ScoreManager>().money += moneyValue;
+        // TODO: encontrar un modo de hacer esto mas seguro?
+        Enemy.numberOfEnemies--;
+        ScoreManager.money += moneyValue;
 		Destroy(gameObject);
 	}
 }
