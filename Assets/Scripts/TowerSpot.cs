@@ -10,14 +10,14 @@ public class TowerSpot : MonoBehaviour {
 
 		BuildingManager bm = GameObject.FindObjectOfType<BuildingManager>();
 		if(bm.selectedTower != null && !MenuPausaScript.GameIsPaused) {
-			
-			if(ScoreManager.money < bm.selectedTower.GetComponent<Tower>().cost) {
+			ScoreManager sm = GameObject.FindObjectOfType<ScoreManager>();
+			if(sm.money < bm.selectedTower.GetComponent<Tower>().cost) {
                 //TODO: crear mensaje que diga al usuario que no tiene suficiente dinero
 				Debug.Log("no hay suficiente dinero");
 				return;
 			}
 
-			ScoreManager.money -= bm.selectedTower.GetComponent<Tower>().cost;
+			sm.money -= bm.selectedTower.GetComponent<Tower>().cost;
 
 			// FIXME: estoy asumiendo que es un objeto perteneciente a un padre (es decir, es un hijo) por esto no se colocan bien
 			Instantiate(bm.selectedTower, transform.parent.position, transform.parent.rotation);
