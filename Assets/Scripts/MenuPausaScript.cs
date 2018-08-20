@@ -9,6 +9,8 @@ public class MenuPausaScript : MonoBehaviour {
 
     public GameObject pauseMenuUI;
 
+    public GameObject tutorialMenuUI;
+
     public GameObject optionsMenuUI;
 
 	void Update () {
@@ -30,6 +32,7 @@ public class MenuPausaScript : MonoBehaviour {
     {
         pauseMenuUI.SetActive(false);
         optionsMenuUI.SetActive(false);
+        tutorialMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -60,5 +63,11 @@ public class MenuPausaScript : MonoBehaviour {
 
     }
 
+    public void Tutorial()
+    {
+        pauseMenuUI.SetActive(false);
+        tutorialMenuUI.SetActive(true);
+
+    }
 
 }
