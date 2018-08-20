@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemySpawner : MonoBehaviour {
 
 	float spawnCD = 0.25f;
-	float spawnCDremaining = 5;
+	float spawnCDremaining = 15;
     public int numberOfWaves = 3;
 
     [System.Serializable]

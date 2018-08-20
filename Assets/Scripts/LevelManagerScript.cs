@@ -19,7 +19,7 @@ public class LevelManagerScript : MonoBehaviour {
     public void CargaNivel(string nombreNivel)
     {
         ScoreManager.Lives = 20;
-        ScoreManager.money = 20;
+        ScoreManager.money = 23;
         SceneManager.LoadScene(nombreNivel);
         EnemySpawner.wavesRestantes = 3;
 
