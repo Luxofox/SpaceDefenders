@@ -215,12 +215,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1099f057d772184b90d3281ad67bd99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
+  range: 7
   bulletPrefab: {fileID: 174540, guid: 644f577d9c48a0b4e98c11774b6aa9c0, type: 2}
-  cost: 10
-  fireCooldown: 1.5
-  damage: 1
-  radius: 5
+  cost: 20
+  fireCooldown: 1
+  damage: 20
+  radius: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

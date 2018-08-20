@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd883124751c80140907ecf965291bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  moneyValue: 25
+  health: 100
+  moneyValue: 15
 --- !u!135 &13514038
 SphereCollider:
   m_ObjectHideFlags: 1
