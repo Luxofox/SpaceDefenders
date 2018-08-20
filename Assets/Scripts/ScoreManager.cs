@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
 {
     
     public static int Lives = 20;
-    public static int money = 20;
+    public static int money = 23;
     public Text moneyText;
     public Text livesText;
 
@@ -35,8 +35,8 @@ public class ScoreManager : MonoBehaviour
     {
        // Debug.Log(Enemy.numberOfEnemies);
         Debug.Log(EnemySpawner.wavesRestantes);
-        moneyText.text = "Money: $" + money.ToString();
-        livesText.text = "Lives: " + Lives.ToString();
+        moneyText.text = "Dinero: $" + money.ToString();
+        livesText.text = "Vidas: " + Lives.ToString();
     }
 
     

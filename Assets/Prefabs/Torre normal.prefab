@@ -218,7 +218,7 @@ MonoBehaviour:
   range: 8
   bulletPrefab: {fileID: 174540, guid: 644f577d9c48a0b4e98c11774b6aa9c0, type: 2}
   cost: 8
-  fireCooldown: 0
+  fireCooldown: 0.2
   damage: 1
   radius: 0
 --- !u!1001 &100100000
