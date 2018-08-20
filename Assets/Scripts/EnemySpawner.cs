@@ -5,7 +5,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	float spawnCD = 0.25f;
 	float spawnCDremaining = 5;
-    int n = 1;
+    public static int numberOfWaves = 3;
 
     [System.Serializable]
 	public class WaveComponent {
@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour {
 		[System.NonSerialized]
 		public int spawned = 0;
 	}
+    
 
 	public WaveComponent[] waveComps;
 
@@ -22,6 +23,7 @@ public class EnemySpawner : MonoBehaviour {
 	}
 	
 	void Update () {
+        
 		spawnCDremaining -= Time.deltaTime;
 		if(spawnCDremaining < 0) {
 			spawnCDremaining = spawnCD;
@@ -33,19 +35,22 @@ public class EnemySpawner : MonoBehaviour {
 				if(wc.spawned < wc.num) {
 					// crea enemigo
 					wc.spawned++;
+                    Enemy.numberOfEnemies++;
 					Instantiate(wc.enemyPrefab, this.transform.position, this.transform.rotation);
 
 					didSpawn = true;
                     break;
 				}
-                if (n != 0)
+                if (numberOfWaves != 0)
                 {
                     FindObjectOfType<AudioManager>().Play("EnemySpawn");
-                    n = 0;
+                    numberOfWaves = 0;
                 }
                 
             }
+
             
+
             if (didSpawn == false) {
 				// se tiene que completar la oleada
 				// TODO: crear mas oleadas de enemigos
