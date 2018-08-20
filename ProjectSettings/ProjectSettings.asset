@@ -635,9 +635,9 @@ PlayerSettings:
   cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: c61cc3e7-bffd-43d9-881a-7159b6c6fe49
+  projectName: Tower Defense Tutorial
+  organizationId: liuli2297
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
