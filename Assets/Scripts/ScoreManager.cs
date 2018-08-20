@@ -3,40 +3,33 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public class ScoreManager : MonoBehaviour {
 
-public class ScoreManager : MonoBehaviour
-{
-    
-    public static int Lives = 20;
-    public static int money = 20;
-    public Text moneyText;
-    public Text livesText;
+	public int lives = 20;
+	public int money = 100;
 
-   void start()
-    {
-        Lives = 20;
-        money = 20;
-        moneyText.text = money.ToString();
-        livesText.text = Lives.ToString();
-    }
+	public Text moneyText;
+	public Text livesText;
 
-    public void LoseLife(int l = 1)
-    {
-        Enemy.numberOfEnemies--;
-        Lives -= l;
-        if (Lives <= 0)
-        {
-            
-            Time.timeScale = 0f;
-        }
-    }
+	public void LoseLife(int l = 1) {
+		lives -= l;
+		if(lives <= 0) {
+			GameOver();
+		}
+	}
 
-    void Update()
-    {
-        Debug.Log(Enemy.numberOfEnemies);
-        moneyText.text = "Money: $" + money.ToString();
-        livesText.text = "Lives: " + Lives.ToString();
-    }
+	public void GameOver() {
+		Debug.Log("Game Over");
+		// TODO: crear pantalla de game over y enviar al jugador a ella.
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
 
-    
+	void Update() {
+		// FIXME: esto no necesariamente tiene que actualizarse cada frame...
+		moneyText.text = "Money: $" + money.ToString();
+		livesText.text = "Lives: "  + lives.ToString();
+
+
+	}
+
 }
